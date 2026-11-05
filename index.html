@@ -548,6 +548,91 @@
       margin-top: 18px;
       text-align: center;
     }
+
+    /* FLYERS GALLERY SECTION */
+    .gallery-section {
+      margin: 45px 0 20px;
+    }
+    .flyers-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    @media (min-width: 620px) {
+      .flyers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .flyer-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--gold-border);
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .flyer-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--flame-amber);
+      box-shadow: 0 12px 30px rgba(255, 68, 0, 0.35);
+    }
+    .flyer-img-wrap {
+      position: relative;
+      background: #000;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+    .flyer-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .flyer-card:hover .flyer-img-wrap img {
+      transform: scale(1.03);
+    }
+    .flyer-overlay {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, 0.78);
+      border: 1px solid var(--gold-border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      backdrop-filter: blur(4px);
+    }
+    .zoom-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .flyer-caption {
+      padding: 12px 14px;
+      background: #090a0e;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .caption-tag {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--flame-amber);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .caption-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #fff;
+      margin-top: 2px;
+    }
+
   </style>
 </head>
 <body>
@@ -789,6 +874,85 @@
       <p style="text-align: center; font-size: 0.75rem; color: #787f96; margin-top: 12px;">
         *Based on ~720 calibrated drops per 30ml dropper bottle. Compare that to £1.00+ blown on half an empty aerosol can!
       </p>
+    </section>
+
+
+    <!-- THE MATCHDAY FLYERS & DOSSIERS (CLICKABLE GALLERY) -->
+    <section class="gallery-section">
+      <h2 class="section-title">THE MATCHDAY FLYERS &amp; INTEL</h2>
+      <p class="section-subtitle">Tap any flyer below to inspect the full-size breakdown in high resolution.</p>
+
+      <div class="flyers-grid">
+        <!-- FLYER 1 -->
+        <a href="flyerone.jpg" target="_blank" rel="noopener noreferrer" class="flyer-card">
+          <div class="flyer-img-wrap">
+            <img src="flyerone.jpg" alt="Matchday Pre-Match & Day-After Recovery Flyer" loading="lazy">
+            <div class="flyer-overlay">
+              <span class="zoom-badge">🔍 Tap to open full size &rarr;</span>
+            </div>
+          </div>
+          <div class="flyer-caption">
+            <span class="caption-tag">DOSSIER 01</span>
+            <div class="caption-title">Matchday Timing &amp; Dosing Protocol</div>
+          </div>
+        </a>
+
+        <!-- FLYER 2 -->
+        <a href="flyertwo.jpg" target="_blank" rel="noopener noreferrer" class="flyer-card">
+          <div class="flyer-img-wrap">
+            <img src="flyertwo.jpg" alt="Inferno vs OTC Options Comparison" loading="lazy">
+            <div class="flyer-overlay">
+              <span class="zoom-badge">🔍 Tap to open full size &rarr;</span>
+            </div>
+          </div>
+          <div class="flyer-caption">
+            <span class="caption-tag">DOSSIER 02</span>
+            <div class="caption-title">The "Heat-To-Heat" vs OTC Rubs</div>
+          </div>
+        </a>
+
+        <!-- FLYER 3 -->
+        <a href="flyerthree.jpg" target="_blank" rel="noopener noreferrer" class="flyer-card">
+          <div class="flyer-img-wrap">
+            <img src="flyerthree.jpg" alt="What's in the Magic Juice & Actives" loading="lazy">
+            <div class="flyer-overlay">
+              <span class="zoom-badge">🔍 Tap to open full size &rarr;</span>
+            </div>
+          </div>
+          <div class="flyer-caption">
+            <span class="caption-tag">DOSSIER 03</span>
+            <div class="caption-title">What's in the Magic Juice &amp; Actives</div>
+          </div>
+        </a>
+
+        <!-- FLYER 4 -->
+        <a href="flyerfour.jpg" target="_blank" rel="noopener noreferrer" class="flyer-card">
+          <div class="flyer-img-wrap">
+            <img src="flyerfour.jpg" alt="How to Use & What to Expect Pitch Flyer" loading="lazy">
+            <div class="flyer-overlay">
+              <span class="zoom-badge">🔍 Tap to open full size &rarr;</span>
+            </div>
+          </div>
+          <div class="flyer-caption">
+            <span class="caption-tag">DOSSIER 04</span>
+            <div class="caption-title">How To Use &amp; What To Expect</div>
+          </div>
+        </a>
+
+        <!-- FLYER 5 -->
+        <a href="flyerfive.jpg" target="_blank" rel="noopener noreferrer" class="flyer-card">
+          <div class="flyer-img-wrap">
+            <img src="flyerfive.jpg" alt="Upgraded Ingredients & Changing Room Warnings" loading="lazy">
+            <div class="flyer-overlay">
+              <span class="zoom-badge">🔍 Tap to open full size &rarr;</span>
+            </div>
+          </div>
+          <div class="flyer-caption">
+            <span class="caption-tag">DOSSIER 05</span>
+            <div class="caption-title">Upgraded Actives &amp; Tackle Warnings</div>
+          </div>
+        </a>
+      </div>
     </section>
 
     <!-- ORDER & CHECKOUT SECTION -->
