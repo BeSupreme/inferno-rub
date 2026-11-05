@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>INFERNO™ | BeSupreme Sports & Athletic Wellness</title>
+  <style>
+    /* RESET & CORE VARIABLES */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --bg-pitch: #070709;
+      --bg-carbon: #0d0e12;
+      --bg-card: #13141b;
+      --bg-card-inner: #0a0b0e;
+      --border-subtle: #222533;
+      --gold-light: #fbeea4;
+      --gold-main: #d4af37;
+      --gold-dark: #8c6d1d;
+      --gold-border: rgba(212, 175, 55, 0.45);
+      --flame-fire: #ff2a00;
+      --flame-amber: #ff8800;
+      --flame-glow: rgba(255, 68, 0, 0.4);
+      --text-white: #f5f6fa;
+      --text-muted: #9ba1b0;
+      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    body {
+      background-color: var(--bg-pitch);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(255, 68, 0, 0.18) 0%, transparent 55%),
+        radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+      background-size: 100% 100%, 26px 26px;
+      color: var(--text-white);
+      font-family: var(--font-stack);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 60px;
+    }
+
+    /* TOP BANNER WRAPPER */
+    .top-banner-wrap {
+      max-width: 960px;
+      margin: 18px auto 10px;
+      padding: 0 16px;
+    }
+    .top-banner-card {
+      border: 1.5px solid var(--gold-border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.15);
+      background: #000;
+    }
+    .top-banner-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* HERO SECTION */
+    .hero-title-area {
+      text-align: center;
+      margin-top: 14px;
+    }
+    .hero-title {
+      font-size: clamp(3.2rem, 10vw, 5.8rem);
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #ffffff 0%, #ffc400 25%, #ff3b00 70%, #990000 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 24px rgba(255, 68, 0, 0.65));
+      line-height: 1.05;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .flame-icon {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      -webkit-text-fill-color: initial;
+      filter: drop-shadow(0 0 12px #ff4400);
+      animation: pulseFlame 1.8s ease-in-out infinite alternate;
+    }
+    @keyframes pulseFlame {
+      0% { transform: scale(0.95); opacity: 0.85; }
+      100% { transform: scale(1.1); opacity: 1; }
+    }
+
+    .badge-weekend {
+      display: inline-block;
+      margin: 10px auto;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--gold-border);
+      color: var(--gold-light);
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.15);
+    }
+
+    .engine-stack {
+      margin: 12px 0 16px;
+    }
+    .engine-line-1 {
+      font-size: clamp(1.2rem, 3.5vw, 1.85rem);
+      font-weight: 900;
+      color: var(--gold-main);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    }
+    .engine-line-2 {
+      font-size: clamp(0.95rem, 2.8vw, 1.3rem);
+      font-weight: 800;
+      color: var(--flame-amber);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    .bullet-points-box {
+      background: rgba(13, 14, 18, 0.8);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin: 16px auto;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .bullet-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.98rem;
+      color: #e0e2ec;
+    }
+    .bullet-item b {
+      color: #fff;
+    }
+
+    /* PUNCHLINE BANNER */
+    .punchline-banner {
+      background: linear-gradient(90deg, #181105 0%, #2e1c02 50%, #181105 100%);
+      border: 1.5px solid var(--gold-main);
+      border-radius: 10px;
+      padding: 12px 16px;
+      text-align: center;
+      margin: 20px 0;
+      font-size: clamp(1.05rem, 3vw, 1.35rem);
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+    }
+    .punchline-banner span {
+      color: var(--gold-light);
+    }
+
+    /* SHAKE BANNER */
+    .shake-banner {
+      background: linear-gradient(90deg, rgba(255, 42, 0, 0.2) 0%, rgba(255, 136, 0, 0.25) 50%, rgba(255, 42, 0, 0.2) 100%);
+      border: 1.5px solid var(--flame-fire);
+      border-radius: 10px;
+      padding: 12px 16px;
+      text-align: center;
+      margin: 18px 0;
+      font-weight: 800;
+      color: #fff;
+      font-size: 0.95rem;
+      box-shadow: 0 0 22px rgba(255, 42, 0, 0.3);
+      animation: pulseWarning 2s infinite alternate;
+    }
+    @keyframes pulseWarning {
+      0% { border-color: var(--flame-fire); }
+      100% { border-color: var(--flame-amber); }
+    }
+
+    /* VERIFIED PROTOCOL CARD */
+    .protocol-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--gold-border);
+      border-radius: 14px;
+      padding: 22px 20px;
+      margin: 24px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    }
+    .protocol-badge {
+      display: inline-block;
+      background: rgba(255, 68, 0, 0.15);
+      border: 1px solid var(--flame-fire);
+      color: #ffaa88;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .protocol-heading {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--gold-main);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .timing-highlight {
+      background: #090a0e;
+      border-left: 3px solid var(--flame-amber);
+      padding: 12px 14px;
+      border-radius: 0 8px 8px 0;
+      margin: 12px 0 18px;
+      font-size: 0.92rem;
+      color: #cfd3e0;
+    }
+    .timing-highlight b {
+      color: #fff;
+    }
+
+    /* STATS GRID */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    @media (min-width: 600px) {
+      .stat-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .stat-box {
+      background: #090a0e;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 12px 10px;
+      text-align: center;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .stat-val {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      margin-top: 4px;
+    }
+
+    /* CTA BUTTONS */
+    .cta-container {
+      margin: 22px 0 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn-fire {
+      background: linear-gradient(180deg, #ff5500 0%, #d82200 100%);
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 16px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid #ff7733;
+      box-shadow: 0 6px 20px rgba(255, 42, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.3);
+      transition: transform 0.15s ease, filter 0.15s ease;
+      cursor: pointer;
+      display: block;
+    }
+    .btn-fire:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+    }
+    .btn-fire:active {
+      transform: translateY(0);
+    }
+    .btn-subtext {
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: -4px;
+    }
+    .btn-subtext b {
+      color: var(--gold-light);
+    }
+
+    /* DOSSIER SECTION (TABS) */
+    .dossier-wrap {
+      margin: 40px 0;
+    }
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 900;
+      color: var(--gold-main);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+    .tab-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .tab-btn {
+      background: var(--bg-carbon);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      padding: 10px 6px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #ff4400 0%, #aa1a00 100%);
+      color: #fff;
+      border-color: #ff7733;
+      box-shadow: 0 4px 14px rgba(255, 68, 0, 0.4);
+    }
+    .tab-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 22px 18px;
+    }
+    .tab-pane {
+      display: none;
+    }
+    .tab-pane.active {
+      display: block;
+    }
+
+    /* DOSSIER CONTENT STYLING */
+    .rule-card {
+      background: #090a0e;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .rule-title {
+      font-size: 0.95rem;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+    .rule-title.danger { color: #ff4444; }
+    .rule-title.warning { color: var(--flame-amber); }
+    .rule-title.gold { color: var(--gold-main); }
+    .rule-desc {
+      font-size: 0.88rem;
+      color: #b5b9c8;
+      line-height: 1.45;
+    }
+
+    /* TABLE */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin-top: 10px;
+    }
+    .compare-table th {
+      background: #090a0e;
+      color: var(--gold-main);
+      padding: 10px 8px;
+      text-align: left;
+      border: 1px solid var(--border-subtle);
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.5px;
+    }
+    .compare-table td {
+      padding: 10px 8px;
+      border: 1px solid var(--border-subtle);
+      color: #cfd3e0;
+    }
+    .compare-table tr:nth-child(even) {
+      background: rgba(255,255,255,0.02);
+    }
+    .highlight-col {
+      background: rgba(255, 68, 0, 0.08) !important;
+      font-weight: 700;
+      color: #fff !important;
+      border-left: 1.5px solid var(--flame-fire) !important;
+      border-right: 1.5px solid var(--flame-fire) !important;
+    }
+
+    /* CALCULATOR */
+    .calc-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--gold-border);
+      border-radius: 14px;
+      padding: 24px 20px;
+      margin: 40px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    }
+    .toggle-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 16px 0 20px;
+    }
+    @media (min-width: 550px) {
+      .toggle-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .muscle-btn {
+      background: #090a0e;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      padding: 10px 8px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s ease;
+    }
+    .muscle-btn.active {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--gold-main);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+    }
+
+    .slider-wrap {
+      margin: 20px 0 24px;
+    }
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+    .slider-header span:last-child {
+      color: var(--flame-amber);
+    }
+    input[type="range"] {
+      width: 100%;
+      height: 8px;
+      background: #222533;
+      border-radius: 4px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--flame-fire);
+      border: 2px solid #fff;
+      box-shadow: 0 0 10px #ff4400;
+      cursor: pointer;
+    }
+
+    .calc-results {
+      background: #090a0e;
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      text-align: center;
+    }
+    .res-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .res-val {
+      font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+      font-weight: 900;
+      color: #fff;
+      margin-top: 4px;
+    }
+    .res-val.green { color: #00e676; }
+    .res-val.gold { color: var(--gold-light); }
+
+    /* FOOTER & SUPPLY */
+    .supply-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 24px 20px;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .support-box {
+      background: #090a0e;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 14px;
+      margin: 18px 0;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .support-box a {
+      color: var(--gold-main);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .disclaimer-text {
+      font-size: 0.75rem;
+      color: #6c7285;
+      line-height: 1.4;
+      margin-top: 18px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP PANORAMIC BANNER -->
+  <header class="top-banner-wrap">
+    <div class="top-banner-card">
+      <img src="https://i.postimg.cc/d1Kv0Hx4/landing-page-top-bit-for-canvajpeg.jpg" alt="BeSupreme INFERNO Athletic Thermal Massage Oil" loading="eager">
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO SECTION -->
+    <section class="hero-title-area">
+      <div class="hero-title">
+        <span class="flame-icon">🔥</span>
+        <span>INFERNO</span>
+        <span class="flame-icon">🔥</span>
+      </div>
+
+      <div>
+        <span class="badge-weekend">⚽ FORMULATED AND DESIGNED FOR THE FOOTBALLING WEEKEND WARRIORS</span>
+      </div>
+
+      <div class="engine-stack">
+        <div class="engine-line-1">THE TRIPLE THREAT ENGINE</div>
+        <div class="engine-line-2">PRE-MATCH FIRE • IN-GAME FURNACE • POST-SHOWER REHEAT</div>
+      </div>
+
+      <div class="bullet-points-box">
+        <div class="bullet-item">
+          <span>🔥</span>
+          <span><b>No gimmicks, no gentle creams</b> — just outright fire in a bottle.</span>
+        </div>
+        <div class="bullet-item">
+          <span>❄️</span>
+          <span><b>Great for warming muscles</b> on them freezing cold morning kick-offs.</span>
+        </div>
+        <div class="bullet-item">
+          <span>⚡</span>
+          <span><b>Effective relief</b> for tight calves, stiff hamstrings, and aching lower backs.</span>
+        </div>
+      </div>
+
+      <div class="punchline-banner">
+        £10 A BOTTLE • PACKS MORE PUNCH THAN IRON MIKE IN HIS PRIME 🥊
+      </div>
+
+      <!-- MANDATORY SHAKE WARNING -->
+      <div class="shake-banner">
+        ⚠️ MANDATORY: SHAKE VIGOROUSLY FOR 30 SECONDS EVERY TIME BEFORE USE TO HOMOGENISE ACTIVE SEED OILS
+      </div>
+
+      <!-- PRIMARY ACTION BUTTON -->
+      <div class="cta-container">
+        <a href="https://buy.stripe.com/fZueVd8Bi5eibD3g5g7Re00" target="_blank" class="btn-fire">
+          GRAB A BOTTLE — £10 (+ P&P) &rarr;
+        </a>
+        <div class="btn-subtext">
+          <b>£10 Cash Handover:</b> Free changing room / local collection option selectable at Stripe checkout, or pay cash in person.
+        </div>
+      </div>
+    </section>
+
+    <!-- VERIFIED PROTOCOL CARD -->
+    <section class="protocol-card">
+      <span class="protocol-badge">VERIFIED PROTOCOL • 30ML PRECISION DROPPER</span>
+      <h2 class="protocol-heading">HITS IN 5 MINS • STAYS LIT FOR UP TO 3 HOURS</h2>
+      
+      <div class="timing-highlight">
+        <b>Real-World Training Test Results:</b><br>
+        5 drops on calves delivered hard vascular warmth in 5 minutes after a good 30-second rub in. 8 drops on thighs created an intense, deep-tissue furnace. Applied at 6:30 PM, trained 7:00–8:00 PM full pelt, and <b>STILL roared with thermal heat after the shower at 9:30 PM</b>.
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-box">
+          <div class="stat-label">Precision Yield</div>
+          <div class="stat-val">700+ Drops</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Air Choke</div>
+          <div class="stat-val" style="color: #00e676;">0% Gas</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Thermal Tail</div>
+          <div class="stat-val">Up to 3 Hrs</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Matchday Run</div>
+          <div class="stat-val">18–36 Games</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE MATCHDAY DOSSIER (TABS) -->
+    <section class="dossier-wrap">
+      <h2 class="section-title">THE CHANGING ROOM DOSSIER</h2>
+      <p class="section-subtitle">Tap the tabs below for technical specs, ground rules, and head-to-head stats.</p>
+
+      <div class="tab-bar">
+        <button class="tab-btn active" onclick="switchTab(0)">1. Dosing & Timing</button>
+        <button class="tab-btn" onclick="switchTab(1)">2. Rules & Actives</button>
+        <button class="tab-btn" onclick="switchTab(2)">3. Over The Counter</button>
+      </div>
+
+      <div class="tab-content">
+        <!-- TAB 1 -->
+        <div class="tab-pane active" id="tab-0">
+          <div class="rule-card">
+            <div class="rule-title gold">PRE-MATCH PROTOCOL (PREVENT THE PULLS)</div>
+            <div class="rule-desc">
+              Apply 20–30 mins before kickoff. Massage firmly for 30 seconds into quads, calves, hamstrings, or lower back until the slick sheen sinks in.
+              <br><br>
+              • <b>Light Warmth:</b> 4 drops per muscle group<br>
+              • <b>Standard Matchday:</b> 6 drops per muscle group<br>
+              • <b>Maximum Inferno:</b> 8 drops per muscle group
+            </div>
+          </div>
+          <div class="rule-card">
+            <div class="rule-title gold">INJURY & SORENESS RECOVERY (KILL DOMS)</div>
+            <div class="rule-desc">
+              For chronic calf tightness, grumbling hamstrings, or stiff lower back: apply <b>3–5 drops</b> the morning after a match to flush stagnant lactic acid. 
+              <br><br>
+              <b>Recommended frequency:</b> Maximum 2 to 3 times per week to prevent desensitisation and skin irritation.
+            </div>
+          </div>
+          <div class="rule-card">
+            <div class="rule-title gold">THE 3-STAGE THERMAL ENGINE</div>
+            <div class="rule-desc">
+              <b>Stage 1 (0–5 Mins):</b> Volatile seed oils hit skin lipids instantly.<br>
+              <b>Stage 2 (In-Game 90–110+ Mins):</b> 1.5M SHU capsicum activates deep vascular flow that won't sweat off.<br>
+              <b>Stage 3 (Shower Reheat):</b> Hot shower water reignites the lipid depot for deep recovery.
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2 -->
+        <div class="tab-pane" id="tab-1">
+          <div class="rule-card">
+            <div class="rule-title danger">RULE 1: WASH HANDS BEFORE TOUCHING YOUR TACKLE</div>
+            <div class="rule-desc">Capsaicin does not negotiate. Always scrub your hands with warm water and soap before taking a pre-match wee.</div>
+          </div>
+          <div class="rule-card">
+            <div class="rule-title danger">RULE 2: DO NOT WRAP IN TIGHT SUPPORTS ONCE APPLIED</div>
+            <div class="rule-desc">Never cover treated areas with airtight neoprene knee sleeves, tight bandages, or plastic wraps. Occlusion traps extreme thermal heat and creates an unbearable blast furnace. Let the skin breathe.</div>
+          </div>
+          <div class="rule-card">
+            <div class="rule-title warning">RULE 3: LUKEWARM SHOWER WATER FIRST</div>
+            <div class="rule-desc">Hot water will reignite the capsaicin depot like molten lava. Start with lukewarm water, wash the area with soap, then turn the heat up.</div>
+          </div>
+          <div class="rule-card">
+            <div class="rule-title gold">THE FORMULA HEAVYWEIGHTS</div>
+            <div class="rule-desc">
+              • <b>25% Methyl Salicylate:</b> Heavy-duty WD-40 for human hinges.<br>
+              • <b>1.5M SHU Capsicum Oleoresin:</b> True thermogenic vascular furnace.<br>
+              • <b>Transdermal IPM (Dry Ester):</b> Kills surface greasiness & drives heat in rapidly.<br>
+              • <b>Menthol Crystals & Clove Bud:</b> Instant cooling buzz that blocks initial pain-gate signals.
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3 -->
+        <div class="tab-pane" id="tab-2">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th class="highlight-col">INFERNO (30ml)</th>
+                <th>Aerosol Spray (150ml)</th>
+                <th>Generic Cream (100g)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Actives</b></td>
+                <td class="highlight-col">~25% + 1.5M SHU Chilli</td>
+                <td>~12% in gas propellant</td>
+                <td>12.8% Salicylate only</td>
+              </tr>
+              <tr>
+                <td><b>Duration</b></td>
+                <td class="highlight-col">3 Hours Sustained</td>
+                <td>20–30 Mins (Dies fast)</td>
+                <td>30–45 Mins max</td>
+              </tr>
+              <tr>
+                <td><b>Changing Room</b></td>
+                <td class="highlight-col">0% Choke Hazard</td>
+                <td>Suffocates 14 teammates</td>
+                <td>Messy white chalk</td>
+              </tr>
+              <tr>
+                <td><b>Bottle Life</b></td>
+                <td class="highlight-col">18–36 Matches</td>
+                <td>5–8 Games (mostly gas)</td>
+                <td>10–12 Games</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE VALUE CALCULATOR -->
+    <section class="calc-card">
+      <h2 class="section-title">VALUE & USAGE CALCULATOR</h2>
+      <p class="section-subtitle">Select your target muscle areas and application intensity to see your exact matchday lifespan.</p>
+
+      <div class="toggle-grid">
+        <button class="muscle-btn active" data-drops="1" onclick="toggleMuscle(this)">Both Quads</button>
+        <button class="muscle-btn active" data-drops="1" onclick="toggleMuscle(this)">Both Calves</button>
+        <button class="muscle-btn" data-drops="1" onclick="toggleMuscle(this)">Hamstrings</button>
+        <button class="muscle-btn" data-drops="1" onclick="toggleMuscle(this)">Lower Back</button>
+      </div>
+
+      <div class="slider-wrap">
+        <div class="slider-header">
+          <span>APPLICATION STRENGTH:</span>
+          <span id="slider-label">STANDARD (6 DROPS / AREA)</span>
+        </div>
+        <input type="range" id="dose-slider" min="1" max="3" step="1" value="2" oninput="updateCalc()">
+      </div>
+
+      <div class="calc-results">
+        <div>
+          <div class="res-label">Dose / Game</div>
+          <div class="res-val" id="res-dose">24 drops</div>
+        </div>
+        <div>
+          <div class="res-label">Games / Bottle</div>
+          <div class="res-val gold" id="res-games">30 matches</div>
+        </div>
+        <div>
+          <div class="res-label">Cost / Game</div>
+          <div class="res-val green" id="res-cost">33p</div>
+        </div>
+      </div>
+      <p style="text-align: center; font-size: 0.75rem; color: #787f96; margin-top: 12px;">
+        *Based on ~720 calibrated drops per 30ml dropper bottle. Compare that to £1.00+ blown on half an empty aerosol can!
+      </p>
+    </section>
+
+    <!-- ORDER & CHECKOUT SECTION -->
+    <section class="supply-card">
+      <h2 class="section-title">SECURE YOUR SUPPLY</h2>
+      <p class="section-subtitle">Grab a bottle for matchday delivery or tracked Royal Mail dispatch.</p>
+
+      <div class="cta-container" style="max-width: 500px; margin: 16px auto;">
+        <a href="https://buy.stripe.com/fZueVd8Bi5eibD3g5g7Re00" target="_blank" class="btn-fire">
+          GRAB A BOTTLE — £10 (+ P&P) &rarr;
+        </a>
+      </div>
+
+      <div class="support-box">
+        <b>Club Bulk Orders & Questions:</b><br>
+        Email: <a href="mailto:besupreme.orders@outlook.com">besupreme.orders@outlook.com</a>
+      </div>
+
+      <p class="disclaimer-text">
+        *Product label aesthetics and packaging details may differ slightly from promotional mockups due to small-batch production runs. External athletic liniment for sports massage. Do not use on broken skin, face, or groin.
+      </p>
+    </section>
+
+  </main>
+
+  <script>
+    // TAB SWITCHER
+    function switchTab(index) {
+      const tabs = document.querySelectorAll('.tab-btn');
+      const panes = document.querySelectorAll('.tab-pane');
+      tabs.forEach((t, i) => t.classList.toggle('active', i === index));
+      panes.forEach((p, i) => p.classList.toggle('active', i === index));
+    }
+
+    // CALCULATOR LOGIC
+    function toggleMuscle(btn) {
+      btn.classList.toggle('active');
+      updateCalc();
+    }
+
+    function updateCalc() {
+      const activeMuscles = document.querySelectorAll('.muscle-btn.active').length;
+      const sliderVal = parseInt(document.getElementById('dose-slider').value);
+      const label = document.getElementById('slider-label');
+
+      let dropsPerArea = 6;
+      if (sliderVal === 1) {
+        dropsPerArea = 4;
+        label.innerText = 'LIGHT (4 DROPS / AREA)';
+      } else if (sliderVal === 2) {
+        dropsPerArea = 6;
+        label.innerText = 'STANDARD (6 DROPS / AREA)';
+      } else {
+        dropsPerArea = 8;
+        label.innerText = 'MAXIMUM INFERNO (8 DROPS / AREA)';
+      }
+
+      const areas = Math.max(1, activeMuscles);
+      const totalDrops = areas * (dropsPerArea * 2); // 2 legs / sides per group
+      const totalBottleDrops = 720;
+      const games = Math.max(1, Math.floor(totalBottleDrops / totalDrops));
+      const costPerGame = Math.round((10.0 / games) * 100);
+
+      document.getElementById('res-dose').innerText = totalDrops + ' drops';
+      document.getElementById('res-games').innerText = games + ' matches';
+      document.getElementById('res-cost').innerText = costPerGame + 'p';
+    }
+
+    // Initialize calculator
+    updateCalc();
+  </script>
+</body>
+</html>
