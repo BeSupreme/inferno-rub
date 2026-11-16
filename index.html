@@ -61,6 +61,38 @@
       object-fit: cover;
     }
 
+    /* PROMO VIDEO SECTION */
+    .promo-video-wrap {
+      max-width: 860px;
+      margin: 18px auto 6px;
+      padding: 0 16px;
+    }
+    .promo-video-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--gold-border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.85), 0 0 24px rgba(255, 68, 0, 0.2);
+    }
+    .promo-video-header {
+      background: linear-gradient(90deg, #161006 0%, #261604 50%, #161006 100%);
+      border-bottom: 1px solid var(--gold-border);
+      padding: 8px 14px;
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+    .promo-video-card video {
+      width: 100%;
+      max-height: 490px;
+      display: block;
+      background: #000;
+      object-fit: contain;
+    }
+
     /* CONTAINER */
     .container {
       max-width: 860px;
@@ -632,7 +664,6 @@
       color: #fff;
       margin-top: 2px;
     }
-
   </style>
 </head>
 <body>
@@ -643,6 +674,17 @@
       <img src="https://i.postimg.cc/d1Kv0Hx4/landing-page-top-bit-for-canvajpeg.jpg" alt="BeSupreme INFERNO Athletic Thermal Massage Oil" loading="eager">
     </div>
   </header>
+
+  <!-- 30-SECOND MATCHDAY PROTOCOL VIDEO -->
+  <section class="promo-video-wrap">
+    <div class="promo-video-card">
+      <div class="promo-video-header">🔥 WATCH BEFORE USE: THE 30-SECOND INFERNO PROTOCOL</div>
+      <video controls playsinline preload="metadata" poster="https://i.postimg.cc/d1Kv0Hx4/landing-page-top-bit-for-canvajpeg.jpg">
+        <source src="inferno-promo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
 
   <main class="container">
 
@@ -687,13 +729,13 @@
         ⚠️ MANDATORY: SHAKE VIGOROUSLY FOR 30 SECONDS EVERY TIME BEFORE USE TO HOMOGENISE ACTIVE SEED OILS
       </div>
 
-      <!-- PRIMARY ACTION BUTTON -->
+      <!-- PRIMARY ACTION BUTTON (MONZO DIRECT) -->
       <div class="cta-container">
-        <a href="https://buy.stripe.com/fZueVd8Bi5eibD3g5g7Re00" target="_blank" class="btn-fire">
-          GRAB A BOTTLE — £10 (+ P&P) &rarr;
+        <a href="https://monzo.com/pay/r/christopher-kenneth-reed_07VimpMH7qUCBO" target="_blank" rel="noopener noreferrer" class="btn-fire">
+          GRAB A BOTTLE — £10 (+ P&amp;P) &rarr;
         </a>
         <div class="btn-subtext">
-          <b>ORDER YOURS FROM THE ABOVE LINK OR CONTACT REEDY TO GET YOURS HAND DELIVERED TO THE CHANGING ROOM</b>
+          <b>INSTANT BANK PAYMENT VIA MONZO • OR CONTACT REEDY FOR CHANGING ROOM DELIVERY</b>
         </div>
       </div>
     </section>
@@ -734,8 +776,8 @@
       <p class="section-subtitle">Tap the tabs below for technical specs, ground rules, and head-to-head stats.</p>
 
       <div class="tab-bar">
-        <button class="tab-btn active" onclick="switchTab(0)">1. Dosing & Timing</button>
-        <button class="tab-btn" onclick="switchTab(1)">2. Rules & Actives</button>
+        <button class="tab-btn active" onclick="switchTab(0)">1. Dosing &amp; Timing</button>
+        <button class="tab-btn" onclick="switchTab(1)">2. Rules &amp; Actives</button>
         <button class="tab-btn" onclick="switchTab(2)">3. Over The Counter</button>
       </div>
 
@@ -753,7 +795,7 @@
             </div>
           </div>
           <div class="rule-card">
-            <div class="rule-title gold">INJURY & SORENESS RECOVERY (KILL DOMS)</div>
+            <div class="rule-title gold">INJURY &amp; SORENESS RECOVERY (KILL DOMS)</div>
             <div class="rule-desc">
               For chronic calf tightness, grumbling hamstrings, or stiff lower back: apply <b>3–5 drops</b> the morning after a match to flush stagnant lactic acid. 
               <br><br>
@@ -789,8 +831,8 @@
             <div class="rule-desc">
               • <b>25% Methyl Salicylate:</b> Heavy-duty WD-40 for human hinges.<br>
               • <b>1.5M SHU Capsicum Oleoresin:</b> True thermogenic vascular furnace.<br>
-              • <b>Transdermal IPM (Dry Ester):</b> Kills surface greasiness & drives heat in rapidly.<br>
-              • <b>Menthol Crystals & Clove Bud:</b> Instant cooling buzz that blocks initial pain-gate signals.
+              • <b>Transdermal IPM (Dry Ester):</b> Kills surface greasiness &amp; drives heat in rapidly.<br>
+              • <b>Menthol Crystals &amp; Clove Bud:</b> Instant cooling buzz that blocks initial pain-gate signals.
             </div>
           </div>
         </div>
@@ -839,7 +881,7 @@
 
     <!-- INTERACTIVE VALUE CALCULATOR -->
     <section class="calc-card">
-      <h2 class="section-title">VALUE & USAGE CALCULATOR</h2>
+      <h2 class="section-title">VALUE &amp; USAGE CALCULATOR</h2>
       <p class="section-subtitle">Select your target muscle areas and application intensity to see your exact matchday lifespan.</p>
 
       <div class="toggle-grid">
@@ -875,7 +917,6 @@
         *Based on ~720 calibrated drops per 30ml dropper bottle. Compare that to £1.00+ blown on half an empty aerosol can!
       </p>
     </section>
-
 
     <!-- THE MATCHDAY FLYERS & DOSSIERS (CLICKABLE GALLERY) -->
     <section class="gallery-section">
@@ -975,13 +1016,13 @@
       <p class="section-subtitle">Grab a bottle for matchday delivery or tracked Royal Mail dispatch.</p>
 
       <div class="cta-container" style="max-width: 500px; margin: 16px auto;">
-        <a href="https://buy.stripe.com/fZueVd8Bi5eibD3g5g7Re00" target="_blank" class="btn-fire">
-          GRAB A BOTTLE — £10 (+ P&P) &rarr;
+        <a href="https://monzo.com/pay/r/christopher-kenneth-reed_07VimpMH7qUCBO" target="_blank" rel="noopener noreferrer" class="btn-fire">
+          GRAB A BOTTLE — £10 (+ P&amp;P) &rarr;
         </a>
       </div>
 
       <div class="support-box">
-        <b>Club Bulk Orders & Questions:</b><br>
+        <b>Club Bulk Orders &amp; Questions:</b><br>
         Email: <a href="mailto:besupreme.orders@outlook.com">besupreme.orders@outlook.com</a>
       </div>
 
