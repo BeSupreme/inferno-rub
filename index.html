@@ -308,14 +308,24 @@
       flex-direction: column;
       gap: 12px;
     }
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 620px) {
+      .cta-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
     .btn-fire {
       background: linear-gradient(180deg, #ff5500 0%, #d82200 100%);
       color: #fff;
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 16px 24px;
+      letter-spacing: 0.8px;
+      padding: 16px 18px;
       border-radius: 10px;
       text-decoration: none;
       text-align: center;
@@ -323,7 +333,11 @@
       box-shadow: 0 6px 20px rgba(255, 42, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.3);
       transition: transform 0.15s ease, filter 0.15s ease;
       cursor: pointer;
-      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
     }
     .btn-fire:hover {
       filter: brightness(1.1);
@@ -332,11 +346,45 @@
     .btn-fire:active {
       transform: translateY(0);
     }
+    .btn-gold {
+      background: linear-gradient(180deg, #2b2109 0%, #171205 100%);
+      color: var(--gold-light);
+      font-size: 1.05rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 16px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      text-align: center;
+      border: 1.5px solid var(--gold-main);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.22), inset 0 1px 0 rgba(251, 238, 164, 0.2);
+      transition: transform 0.15s ease, filter 0.15s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+    }
+    .btn-gold:hover {
+      filter: brightness(1.15);
+      transform: translateY(-2px);
+    }
+    .btn-gold:active {
+      transform: translateY(0);
+    }
+    .btn-note {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      opacity: 0.9;
+    }
     .btn-subtext {
       text-align: center;
       font-size: 0.88rem;
       color: var(--text-muted);
-      margin-top: -4px;
+      margin-top: 2px;
     }
     .btn-subtext b {
       color: var(--gold-light);
@@ -729,13 +777,20 @@
         ⚠️ MANDATORY: SHAKE VIGOROUSLY FOR 30 SECONDS EVERY TIME BEFORE USE TO HOMOGENISE ACTIVE SEED OILS
       </div>
 
-      <!-- PRIMARY ACTION BUTTON (MONZO DIRECT) -->
+      <!-- PRIMARY ACTION BUTTONS -->
       <div class="cta-container">
-        <a href="https://monzo.com/pay/r/christopher-kenneth-reed_07VimpMH7qUCBO" target="_blank" rel="noopener noreferrer" class="btn-fire">
-          GRAB A BOTTLE — £10 (+ P&amp;P) &rarr;
-        </a>
+        <div class="cta-grid">
+          <a href="https://monzo.com/pay/r/christopher-kenneth-reed_07VimpMH7qUCBO" target="_blank" rel="noopener noreferrer" class="btn-gold">
+            <span>COLLECTION — £10 &rarr;</span>
+            <span class="btn-note">Changing Room / In-Person Handover</span>
+          </a>
+          <a href="https://monzo.com/pay/r/christopher-kenneth-reed_6bPPBz2AYzMg8Z" target="_blank" rel="noopener noreferrer" class="btn-fire">
+            <span>TRACKED DELIVERY — £13.50 &rarr;</span>
+            <span class="btn-note">£10 Bottle + £3.50 Royal Mail Tracked</span>
+          </a>
+        </div>
         <div class="btn-subtext">
-          <b>INSTANT BANK PAYMENT VIA MONZO • OR CONTACT REEDY FOR CHANGING ROOM DELIVERY</b>
+          <b>INSTANT BANK TRANSFER • CONTACT REEDY TO GET YOURS FROM THE CHANGING ROOM</b>
         </div>
       </div>
     </section>
@@ -1015,10 +1070,20 @@
       <h2 class="section-title">SECURE YOUR SUPPLY</h2>
       <p class="section-subtitle">Grab a bottle for matchday delivery or tracked Royal Mail dispatch.</p>
 
-      <div class="cta-container" style="max-width: 500px; margin: 16px auto;">
-        <a href="https://monzo.com/pay/r/christopher-kenneth-reed_07VimpMH7qUCBO" target="_blank" rel="noopener noreferrer" class="btn-fire">
-          GRAB A BOTTLE — £10 (+ P&amp;P) &rarr;
-        </a>
+      <div class="cta-container" style="margin: 16px auto;">
+        <div class="cta-grid">
+          <a href="https://monzo.com/pay/r/christopher-kenneth-reed_07VimpMH7qUCBO" target="_blank" rel="noopener noreferrer" class="btn-gold">
+            <span>COLLECTION — £10 &rarr;</span>
+            <span class="btn-note">Changing Room / In-Person Handover</span>
+          </a>
+          <a href="https://monzo.com/pay/r/christopher-kenneth-reed_6bPPBz2AYzMg8Z" target="_blank" rel="noopener noreferrer" class="btn-fire">
+            <span>TRACKED DELIVERY — £13.50 &rarr;</span>
+            <span class="btn-note">£10 Bottle + £3.50 Royal Mail Tracked</span>
+          </a>
+        </div>
+        <div class="btn-subtext">
+          <b>INSTANT BANK TRANSFER • CONTACT REEDY TO GET YOURS FROM THE CHANGING ROOM</b>
+        </div>
       </div>
 
       <div class="support-box">
@@ -1065,19 +1130,4 @@
         label.innerText = 'MAXIMUM INFERNO (8 DROPS / AREA)';
       }
 
-      const areas = Math.max(1, activeMuscles);
-      const totalDrops = areas * (dropsPerArea * 2); // 2 legs / sides per group
-      const totalBottleDrops = 720;
-      const games = Math.max(1, Math.floor(totalBottleDrops / totalDrops));
-      const costPerGame = Math.round((10.0 / games) * 100);
-
-      document.getElementById('res-dose').innerText = totalDrops + ' drops';
-      document.getElementById('res-games').innerText = games + ' matches';
-      document.getElementById('res-cost').innerText = costPerGame + 'p';
-    }
-
-    // Initialize calculator
-    updateCalc();
-  </script>
-</body>
-</html>
+      const areas
